@@ -46,8 +46,8 @@
             android:paddingEnd="@dimen/dimen_0dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-            android:id="@+id/ccp_verify_btn"
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/sms_verify_btn"
             android:layout_width="@dimen/dimen_0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"

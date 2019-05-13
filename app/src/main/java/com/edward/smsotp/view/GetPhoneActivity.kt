@@ -12,9 +12,13 @@ class GetPhoneActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_get_phone)
 
-        ccp_next_btn.setOnClickListener{
-            val smsIntent= Intent(this@GetPhoneActivity, VerifySmsActivity::class.java)
-            startActivity(smsIntent)
+        ccp_next_btn.setOnClickListener {
+            if (tiet_ccp_phone.text.toString().isEmpty()) {
+                tiet_ccp_phone.error = "Enter Phone"
+            } else {
+                val smsIntent = Intent(this@GetPhoneActivity, VerifySmsActivity::class.java)
+                startActivity(smsIntent)
+            }
         }
     }
 }
