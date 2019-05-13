@@ -4,4 +4,6 @@
     <string name="text_code">0000</string>
     <string name="app_intro_next">NEXT</string>
     <string name="text_continue">CONTINUE</string>
+    <string name="text_sms_code">Sms Code</string>
+    <string name="text_phone">Phone Number</string>
 </resources>
