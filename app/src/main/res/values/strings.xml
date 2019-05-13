@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Sms Otp</string>
+    <string name="phone_number">071623868</string>
+    <string name="text_code">0000</string>
+    <string name="app_intro_next">NEXT</string>
+    <string name="text_continue">CONTINUE</string>
 </resources>
