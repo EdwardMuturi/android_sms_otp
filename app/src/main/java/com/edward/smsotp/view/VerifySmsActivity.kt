@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.edward.smsotp.R
+import com.edward.smsotp.network.LoginApiService
 import kotlinx.android.synthetic.main.activity_verify_sms.*
 
 class VerifySmsActivity : AppCompatActivity() {
@@ -18,6 +19,8 @@ class VerifySmsActivity : AppCompatActivity() {
             else
                 startActivity(Intent(this@VerifySmsActivity, MainActivity::class.java))
         }
+
+
     }
 
     private fun checkEmpty():Boolean{
