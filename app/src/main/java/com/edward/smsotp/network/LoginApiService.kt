@@ -15,6 +15,7 @@ interface LoginApiService {
     @POST("/accounts/authenticate/")
     fun sendPhone(@Body phoneRequest: PhoneRequest): Call<SmsVerifyResponse>
 
+    @Headers("Content-Type: application/json")
     @POST("/accounts/confirm/")
-    fun verfiyCode(@Body verifySmsRequest: VerifySmsRequest): Call<SmsVerifyResponse>
+    fun verifyCode(@Body verifySmsRequest: VerifySmsRequest): Call<SmsVerifyResponse>
 }

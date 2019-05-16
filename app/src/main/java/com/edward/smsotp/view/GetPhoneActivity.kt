@@ -16,6 +16,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class GetPhoneActivity : AppCompatActivity() {
+    private var phone: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +26,10 @@ class GetPhoneActivity : AppCompatActivity() {
             if (tiet_ccp_phone.text.toString().isEmpty()) {
                 tiet_ccp_phone.error = "Enter Phone"
             } else {
-                val phoneRequest = PhoneRequest(ccp_code.selectedCountryCodeWithPlus + tiet_ccp_phone.text.toString())
+                ccp_next_btn.isClickable = false
+                phone= ccp_code.selectedCountryCodeWithPlus + tiet_ccp_phone.text.toString()
+                val phoneRequest = PhoneRequest(phone!!)
                 sendPhone(phoneRequest)
-
-                val smsIntent = Intent(this@GetPhoneActivity, VerifySmsActivity::class.java)
-                startActivity(smsIntent)
             }
         }
     }
@@ -46,6 +46,9 @@ class GetPhoneActivity : AppCompatActivity() {
                     val smsVerifyResponse = response.body()
                     Toast.makeText(this@GetPhoneActivity, smsVerifyResponse!!.message, Toast.LENGTH_LONG)
                         .show()
+                    val smsIntent = Intent(this@GetPhoneActivity, VerifySmsActivity::class.java)
+                    smsIntent.putExtra("user_phone", phone)
+                    startActivity(smsIntent)
                 }
             }
 
